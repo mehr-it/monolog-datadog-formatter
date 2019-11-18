@@ -19,7 +19,7 @@
 
 			// add timestamp
 			if (isset($record["datetime"]) && ($record["datetime"] instanceof \DateTimeInterface)) {
-				$record["timestamp"] = $record["datetime"]->getTimestamp();
+				$record["timestamp"] = $record["datetime"]->format('Uv');
 				unset($record["datetime"]);
 			}
 

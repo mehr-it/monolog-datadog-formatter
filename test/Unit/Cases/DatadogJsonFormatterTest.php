@@ -24,7 +24,7 @@
 
 			$this->assertSame([
 				'message'   => 'My message',
-				'timestamp' => $dt->getTimestamp(),
+				'timestamp' => $dt->format('Uv'),
 			], json_decode($formatted, true));
 
 
@@ -54,7 +54,7 @@
 						return $frame['file'] . ':' . $frame['line'];
 					}, $ex->getTrace()),
 				],
-				'timestamp' => $dt->getTimestamp(),
+				'timestamp' => $dt->format('Uv'),
 			], json_decode($formatted, true));
 
 
