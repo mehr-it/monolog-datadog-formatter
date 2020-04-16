@@ -25,6 +25,7 @@
 			$this->assertSame([
 				'message'   => 'My message',
 				'timestamp' => $dt->format('Uv'),
+				'pid' => posix_getpid(),
 			], json_decode($formatted, true));
 
 
@@ -55,6 +56,7 @@
 					}, $ex->getTrace()),
 				],
 				'timestamp' => $dt->format('Uv'),
+				'pid' => posix_getpid(),
 			], json_decode($formatted, true));
 
 

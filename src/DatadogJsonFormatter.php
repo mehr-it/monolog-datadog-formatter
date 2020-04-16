@@ -23,6 +23,10 @@
 				unset($record["datetime"]);
 			}
 
+			// add PID
+			if (!($record['pid'] ?? null) && extension_loaded('posix'))
+				$record['pid'] = posix_getpid();
+
 			return parent::format($record);
 		}
 
