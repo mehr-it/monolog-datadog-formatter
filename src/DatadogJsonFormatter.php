@@ -15,7 +15,7 @@
 			$this->includeStacktraces = $includeStacktraces;
 		}
 
-		public function format(array $record) {
+		public function format(array $record): string {
 
 			// add timestamp
 			if (isset($record["datetime"]) && ($record["datetime"] instanceof \DateTimeInterface)) {
